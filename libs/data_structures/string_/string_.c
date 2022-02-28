@@ -1,6 +1,20 @@
 #include "string_.h"
 
 
+void assertString(const char *expected, char *got,
+                  char const *fileName, char const *funcName,
+                  int line) {
+    int x = strcmp(expected, got);
+    if (x) {
+        fprintf(stderr, " File %s\n", fileName);
+        fprintf(stderr, "%s - failed on line %d\n", funcName, line);
+        fprintf(stderr, " Expected : \"%s\"\n", expected);
+        fprintf(stderr, "Got: \"%s\"\n\n", got);
+    } else
+        fprintf(stderr, "%s - OK\n", funcName);
+}
+
+
 size_t strlen_(char *begin) {
     char *endL = begin;
     while (*endL != '\0')
@@ -48,7 +62,7 @@ int strcmp(const char *lhs, const char *rhs) {
 
 char *copy(const char *beginSource, const char *endSource, char *beginDestination) {
     memcpy(beginDestination, beginSource, endSource - beginSource);
-    return beginDestination + (endSource - beginSource);
+    return beginDestination + (endSource - beginSource + 1);
 }
 
 char *copyIf(char *beginSource, const char *endSource, char *beginDestination, int (*f)(int)) {
@@ -62,8 +76,8 @@ char *copyIf(char *beginSource, const char *endSource, char *beginDestination, i
     return beginDestination;
 }
 
-char* copyIfReverse(char *rbeginSource, const char *rendSource,
-                    char *beginDestination, int (*f)(int)){
+char *copyIfReverse(char *rbeginSource, const char *rendSource,
+                    char *beginDestination, int (*f)(int)) {
     while (rbeginSource != rendSource) {
         if (f(*rbeginSource)) {
             *beginDestination = *rbeginSource;
@@ -73,3 +87,4 @@ char* copyIfReverse(char *rbeginSource, const char *rendSource,
     }
     return beginDestination;
 }
+
