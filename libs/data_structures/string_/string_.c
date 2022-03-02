@@ -92,7 +92,6 @@ bool getWord(char *beginSearch, WordDescriptor *word) {
         return 0;
 
     word->end = findSpace(word->begin);
-
     return 1;
 }
 
@@ -102,6 +101,5 @@ bool getWordReverse(char *rbegin, char *rend, WordDescriptor *word) {
         return 0;
 
     word->end = findSpaceReverse(word->begin, rend);
-
     return 1;
 }
