@@ -1,17 +1,30 @@
 #ifndef STRING_STRING__H
 #define STRING_STRING__H
 
+#include <stdbool.h>
 #include <stdio.h>
 #include <ctype.h>
 #include <memory.h>
 #include <assert.h>
+#define MAX_STRING_SIZE 100
+static char stringBuffer[MAX_STRING_SIZE + 1];
 
 #define ASSERT_STRING(expected, got) assertString(expected, got, \
 __FILE__ , __FUNCTION__ , __LINE__ )
 
+
 void assertString(const char *expected, char *got,
                   char const *fileName, char const *funcName,
                   int line);
+
+typedef struct WordDescriptor {
+    char *begin;
+    char *end;
+} WordDescriptor;
+
+bool getWord(char *beginSearch, WordDescriptor *word);
+
+bool getWordReverse(char *rbegin, char *rend, WordDescriptor *word);
 
 size_t strlen_(char *begin);
 
