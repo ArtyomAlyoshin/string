@@ -16,6 +16,8 @@ static char stringBuffer[MAX_STRING_SIZE + 1];
 #define ASSERT_STRING(expected, got) assertString(expected, got, \
 __FILE__ , __FUNCTION__ , __LINE__ )
 
+
+
 void assertString(const char *expected, char *got,
                   char const *fileName, char const *funcName,
                   int line);
@@ -25,6 +27,13 @@ typedef struct WordDescriptor {
     char *end;
 } WordDescriptor;
 
+typedef struct BagOfWords {
+    WordDescriptor words[MAX_N_WORDS_IN_STRING];
+    size_t size;
+} BagOfWords;
+
+static BagOfWords _bag;
+static BagOfWords _bag2;
 bool getWord(char *beginSearch, WordDescriptor *word);
 
 bool getWordReverse(char *rbegin, char *rend, WordDescriptor *word);
@@ -51,5 +60,7 @@ char *copyIfReverse(char *rbeginSource, const char *rendSource,
                     char *beginDestination, int (*f)(int));
 
 char *getEndOfString(char *s);
+
+void getBagOfWords(BagOfWords *bag, char *s);
 
 #endif

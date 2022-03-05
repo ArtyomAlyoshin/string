@@ -103,3 +103,14 @@ bool getWordReverse(char *rbegin, char *rend, WordDescriptor *word) {
     word->end = findSpaceReverse(word->begin, rend);
     return 1;
 }
+
+void getBagOfWords(BagOfWords *bag, char *s) {
+    char *begin = s;
+    bag->size = 0;
+    WordDescriptor word;
+    while (getWord(begin, &word)) {
+        bag->words[bag->size] = word;
+        bag->size++;
+        begin = word.end;
+    }
+}
