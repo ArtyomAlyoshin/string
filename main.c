@@ -7,8 +7,14 @@
 #include "libs/data_structures/string_/tasks/replace.h"
 #include "libs/data_structures/string_/tasks/IsOrderedWord.h"
 #include "libs/data_structures/string_/tasks/reverseWord.h"
+#include "libs/data_structures/string_/tasks/isPoly.h"
+
+
+
+
 
 int main() {
+    test_countOfPalindrome();
     test_reverseWords();
     test_isWordsOrdered();
     test_writeSpacesInsteadOfDigit();
