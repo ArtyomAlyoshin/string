@@ -8,7 +8,6 @@ bool isPalindrome(char *begin, char *end) {
     while (end - begin > 0) {
         if (*begin != *end)
             return false;
-
         begin++;
         end--;
     }
@@ -23,8 +22,9 @@ size_t countOfPalindrome(char *s) {
     char comma = 44;
     char *commaPosition = find(begin, end, comma);
 
-    int isLastComma = 0;
-    while (*commaPosition != '\0' || isLastComma) {
+    int isLastComma = (*commaPosition == '\0') && (end - begin != 0);
+
+    while (*commaPosition != '\0' || isLastComma ) {
         count += isPalindrome(begin, commaPosition);
         begin = commaPosition + 1;
         if (isLastComma)
@@ -50,11 +50,21 @@ void test_countOfPalindrome_oneLetter() {
     char s[] = "a,b,c";
     assert(countOfPalindrome(s) == 3);
 }
+void test_countOfPalindrome_oneLetter1() {
+    char s[] = "abcba";
+    assert(countOfPalindrome(s) == 1);
+}
 
+void test_countOfPalindrome_empty() {
+    char s[] = "";
+    assert(countOfPalindrome(s) == 0);
+}
 void test_countOfPalindrome() {
+    test_countOfPalindrome_empty();
     test_countOfPalindrome_oneLetter();
     test_countOfPalindrome_noPoly();
     test_countOfPalindrome_hasPoly();
+    test_countOfPalindrome_oneLetter1();
 }
 
 #endif
