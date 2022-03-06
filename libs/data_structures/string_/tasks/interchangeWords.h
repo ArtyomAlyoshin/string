@@ -22,7 +22,6 @@ void interchangingWords(char *s, char *s1, char *s2) {
             *s++ = ' ';
             beginSearch2 = word2.end;
         }
-git
     }
     if (s != sCopy)
         --s;
