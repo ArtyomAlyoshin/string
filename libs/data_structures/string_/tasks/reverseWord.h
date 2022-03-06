@@ -7,7 +7,7 @@ void reverseWords(char *s) {
     *s_ = '\0';
 
     BagOfWords bag;
-    getBagOfWords(&bag, stringBuffer);
+    getBagOfWords(&bag, s);
     char *begin = s;
     int isChanged = 0;
     for (int i = bag.size - 1; i >= 0; i--) {

@@ -63,4 +63,7 @@ char *getEndOfString(char *s);
 
 void getBagOfWords(BagOfWords *bag, char *s);
 
+char *copyReverse(char *rbeginSource, const char *rendSource,
+                  char *beginDestination);
+
 #endif

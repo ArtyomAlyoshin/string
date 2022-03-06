@@ -105,12 +105,20 @@ bool getWordReverse(char *rbegin, char *rend, WordDescriptor *word) {
 }
 
 void getBagOfWords(BagOfWords *bag, char *s) {
-    char *begin = s;
     bag->size = 0;
     WordDescriptor word;
-    while (getWord(begin, &word)) {
+    while (getWord(s, &word)) {
         bag->words[bag->size] = word;
-        bag->size++;
-        begin = word.end;
+        bag->size+=1;
+        s = word.end;
     }
+}
+
+char *copyReverse(char *rbeginSource, const char *rendSource,
+                  char *beginDestination) {
+    while (rbeginSource != rendSource) {
+        *beginDestination++ = *rbeginSource;
+        rbeginSource--;
+    }
+    return beginDestination;
 }

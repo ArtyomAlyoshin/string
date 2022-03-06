@@ -9,17 +9,16 @@ int areWordsEqual(WordDescriptor w1, WordDescriptor w2) {
 }
 
 bool isWordsOrdered(char *s) {
-    char *begin = s;
     WordDescriptor now;
-    if (!getWord(begin, &now))
+    if (!getWord(s, &now))
         return true;
 
     WordDescriptor last = now;
-    while (getWord(begin, &now)) {
+    while (getWord(s, &now)) {
         if (areWordsEqual(now, last) < 0)
             return false;
         last = now;
-        begin = now.end;
+        s = now.end;
     }
     return true;
 }
@@ -35,7 +34,7 @@ void test_isWordsOrdered_oneSymbol2() {
 }
 
 void test_isWordsOrdered_ordered() {
-    char s[] = "aaaaa fffff wwwww";
+    char s[] = "aaaa fffff wwwww";
     assert(isWordsOrdered(s));
 }
 
