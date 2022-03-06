@@ -9,12 +9,13 @@
 #include "libs/data_structures/string_/tasks/reverseWord.h"
 #include "libs/data_structures/string_/tasks/isPoly.h"
 #include "libs/data_structures/string_/tasks/reverse.h"
-
+#include "libs/data_structures/string_/tasks/interchangeWords.h"
 
 
 
 
 int main() {
+    test_interchangingWords();
     test_countOfPalindrome();
     test_reverseWords();
     test_isWordsOrdered();
