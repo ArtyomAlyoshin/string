@@ -10,11 +10,13 @@
 #include "libs/data_structures/string_/tasks/isPoly.h"
 #include "libs/data_structures/string_/tasks/reverse.h"
 #include "libs/data_structures/string_/tasks/interchangeWords.h"
-
-
+#include "libs/data_structures/string_/tasks/printWordBeforeFirstWordWithA.h"
+#include "libs/data_structures/string_/tasks/equalWords.h"
 
 
 int main() {
+    test_hasEqualWords();
+    testAll_getWordBeforeFirstWordWithA();
     test_interchangingWords();
     test_countOfPalindrome();
     test_reverseWords();
