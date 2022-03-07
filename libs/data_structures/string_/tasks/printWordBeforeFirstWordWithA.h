@@ -17,11 +17,20 @@ WordBeforeFirstWordWithAReturnCode getWordBeforeFirstWordWithA(char *s, char **b
         return EMPTY_STRING;
     else if (find(word.begin, word.end, 'a') != word.end || find(word.begin, word.end, 'A') != word.end)
         return FIRST_WORD_WITH_A;
-    while(getWord(s, &word) != '\0'){
+    WordDescriptor word2;
+    while (getWord(begin, &word2)) {
+        if (find(word2.begin, word2.end, 'A') != word2.end || find(word2.begin, word2.end, 'a') != word2.end) {
+            *beginWordBefore = word.begin;
+            *endWordBefore = word.end;
 
+            return WORD_FOUND;
+        }
+        word = word2;
+        begin = word.end + 1;
     }
-}
+    return NOT_FOUND_A_WORD_WITH_A;
 
+}
 
 void testAll_getWordBeforeFirstWordWithA() {
     char *beginWord, *endWord;
