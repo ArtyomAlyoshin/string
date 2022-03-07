@@ -96,11 +96,11 @@ bool getWord(char *beginSearch, WordDescriptor *word) {
 }
 
 bool getWordReverse(char *rbegin, char *rend, WordDescriptor *word) {
-    word->begin = findNonSpaceReverse(rbegin, rend);
-    if (word->begin == rend)
+    word->end = findNonSpaceReverse(rbegin, rend) + 1;
+    if (word->end == rend)
         return 0;
 
-    word->end = findSpaceReverse(word->begin, rend);
+    word->begin = findSpaceReverse(word->end, rend) + 1;
     return 1;
 }
 
@@ -129,4 +129,10 @@ int areWordsEqual(WordDescriptor w1, WordDescriptor w2) {
     while ((*begin1 == *begin2)&&begin1 != w1.end - 1  )
         begin1++, begin2++;
     return *begin1 - *begin2;
+}
+
+char *getEndOfString(char *s) {
+    while (*s != '\0')
+        s++;
+    return s;
 }

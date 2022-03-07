@@ -12,9 +12,10 @@
 #include "libs/data_structures/string_/tasks/interchangeWords.h"
 #include "libs/data_structures/string_/tasks/printWordBeforeFirstWordWithA.h"
 #include "libs/data_structures/string_/tasks/equalWords.h"
-
+#include "libs/data_structures/string_/tasks/deleteSameWordsAsLastWord.h"
 
 int main() {
+    test_deleteSameWordsAsLastWord();
     test_hasEqualWords();
     testAll_getWordBeforeFirstWordWithA();
     test_interchangingWords();
