@@ -14,8 +14,12 @@
 #include "libs/data_structures/string_/tasks/equalWords.h"
 #include "libs/data_structures/string_/tasks/deleteSameWordsAsLastWord.h"
 #include "libs/data_structures/string_/tasks/wordsFromSameLetters.h"
+#include "libs/data_structures/string_/tasks/lastFirstWordStringToSecond.h"
+
+
 
 int main() {
+    test_getLastWordInFirstStringAndTheSecondString();
     test_wordsFromSameLetters();
     test_deleteSameWordsAsLastWord();
     test_hasEqualWords();

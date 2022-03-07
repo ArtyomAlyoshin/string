@@ -53,9 +53,9 @@ char *findSpaceReverse(char *rbegin, const char *rend) {
 }
 
 int strcmp(const char *lhs, const char *rhs) {
-    while (*rhs && *lhs && *lhs == *rhs)
+    while (*lhs && *lhs == *rhs)
         lhs++, rhs++;
-    return (unsigned char) *lhs - (unsigned char) *rhs;
+    return *lhs -  *rhs;
 }
 
 char *copy(const char *beginSource, const char *endSource, char *beginDestination) {
