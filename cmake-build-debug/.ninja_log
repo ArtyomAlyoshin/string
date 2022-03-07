@@ -10,3 +10,17 @@
 92	528	6683463947079728	libs/data_structures/CMakeFiles/data_structures.dir/string_/string_.c.obj	cc47f80f22f1748f
 528	680	6683463948708708	libs/data_structures/libdata_structures.a	6f13082b85a019b6
 1	1778	6683476776814686	build.ninja	fdcb2fbb25bf29a3
+37	2322	6683478315759266	libs/data_structures/CMakeFiles/data_structures.dir/string_/string_.c.obj	cc47f80f22f1748f
+33	2336	6683478315759266	CMakeFiles/string.dir/libs/data_structures/string_/string_.c.obj	136166a0f613c8a5
+3	2344	6683478315809253	CMakeFiles/string.dir/main.c.obj	4f01edeb4fa6a951
+2323	2567	6683478318327705	libs/data_structures/libdata_structures.a	6f13082b85a019b6
+2567	3212	6683478324710403	string.exe	3771bedd7fb8f196
+4	1320	6683480315391036	CMakeFiles/string.dir/main.c.obj	4f01edeb4fa6a951
+3	1365	6683480415198528	CMakeFiles/string.dir/main.c.obj	4f01edeb4fa6a951
+1367	1890	6683480419515862	string.exe	3771bedd7fb8f196
+4	320	6683480579398970	CMakeFiles/string.dir/main.c.obj	4f01edeb4fa6a951
+320	600	6683480582177277	string.exe	3771bedd7fb8f196
+3	299	6683480716992438	CMakeFiles/string.dir/main.c.obj	4f01edeb4fa6a951
+300	505	6683480718991203	string.exe	3771bedd7fb8f196
+4	715	6683481584305840	CMakeFiles/string.dir/main.c.obj	4f01edeb4fa6a951
+716	1121	6683481588183458	string.exe	3771bedd7fb8f196
