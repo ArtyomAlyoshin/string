@@ -20,6 +20,7 @@
 
 
 int main() {
+    test_lettersInWordInString();
     test_addLastWords();
     test_getLastWordInFirstStringAndTheSecondString();
     test_wordsFromSameLetters();
