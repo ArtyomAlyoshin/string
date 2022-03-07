@@ -66,4 +66,5 @@ void getBagOfWords(BagOfWords *bag, char *s);
 char *copyReverse(char *rbeginSource, const char *rendSource,
                   char *beginDestination);
 
+int areWordsEqual(WordDescriptor w1, WordDescriptor w2);
 #endif

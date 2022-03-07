@@ -122,3 +122,11 @@ char *copyReverse(char *rbeginSource, const char *rendSource,
     }
     return beginDestination;
 }
+
+int areWordsEqual(WordDescriptor w1, WordDescriptor w2) {
+    char *begin1 = w1.begin;
+    char *begin2 = w2.begin;
+    while ((*begin1 == *begin2)&&begin1 != w1.end - 1  )
+        begin1++, begin2++;
+    return *begin1 - *begin2;
+}

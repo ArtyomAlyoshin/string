@@ -4,9 +4,6 @@
 
 #include "../string_.h"
 
-int areWordsEqual(WordDescriptor w1, WordDescriptor w2) {
-    return strcmp(w1.begin, w2.begin);
-}
 
 bool isWordsOrdered(char *s) {
     WordDescriptor now;
