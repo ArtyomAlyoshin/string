@@ -1,6 +1,5 @@
 #ifndef STRING_EQUALWORDS_H
 #define STRING_EQUALWORDS_H
-
 #include "../string_.h"
 
 bool hasEqualWords(char *s) {

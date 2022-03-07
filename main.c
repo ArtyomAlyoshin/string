@@ -15,10 +15,12 @@
 #include "libs/data_structures/string_/tasks/deleteSameWordsAsLastWord.h"
 #include "libs/data_structures/string_/tasks/wordsFromSameLetters.h"
 #include "libs/data_structures/string_/tasks/lastFirstWordStringToSecond.h"
-
+#include "libs/data_structures/string_/tasks/addLastWords.h"
+#include "libs/data_structures/string_/tasks/areWordLettersInString.h"
 
 
 int main() {
+    test_addLastWords();
     test_getLastWordInFirstStringAndTheSecondString();
     test_wordsFromSameLetters();
     test_deleteSameWordsAsLastWord();

@@ -1,0 +1,5 @@
+#ifndef STRING_AREWORDLETTERSINSTRING_H
+#define STRING_AREWORDLETTERSINSTRING_H
+#include "../string_.h"
+
+#endif

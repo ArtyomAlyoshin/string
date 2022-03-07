@@ -1,30 +1,24 @@
-
 #ifndef STRING_DELETESAMEWORDSASLASTWORD_H
 #define STRING_DELETESAMEWORDSASLASTWORD_H
-
 #include "../string_.h"
 
 void deleteSameWordsAsLastWord(char *s) {
     WordDescriptor lastWord;
-    int isLast = getWordReverse(getEndOfString(s), s - 1, &lastWord);
+    getWordReverse(getEndOfString(s), s - 1, &lastWord);
 
-    if (!isLast)
-        return;
-
-    char *beginSearch = s;
-    char *copyS = s;
+    char *copy2 = s;
+    char *copy1 = s;
     WordDescriptor now;
-    while (getWord(beginSearch, &now)) {
+    while (getWord(copy2, &now)) {
         if (areWordsEqual(now, lastWord) != 0) {
-            copyS = copy(now.begin, now.end, copyS);
-            *copyS++ = ' ';
+            s = copy(now.begin, now.end, s);
+            *s++ = ' ';
         }
-        beginSearch = now.end;
+        copy2 = now.end;
     }
-    if (copyS != s)
-        --copyS;
-
-    *copyS = '\0';
+    if (s != copy1)
+        --s;
+    *s = '\0';
 }
 
 void test_deleteSameWordsAsLastWord_someLastWords() {

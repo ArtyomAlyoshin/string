@@ -2,6 +2,7 @@
 
 #ifndef STRING_WORDSFROMSAMELETTERS_H
 #define STRING_WORDSFROMSAMELETTERS_H
+
 #include "../string_.h"
 
 int cmp(const void *a, const void *b) {
@@ -19,22 +20,22 @@ bool wordsFromSameLetters(char *s) {
 }
 
 void test_wordsFromSameLetters_hasThisWords() {
-    char s[] = "ababab bababa zxzxzx";
+    char s[MAX_STRING_SIZE] = "ababab bababa zxzxzx";
     assert(wordsFromSameLetters(s));
 }
 
 void test_wordsFromSameLetters_hasThisWords2() {
-    char s[] = "abcdefg gfedcba";
+    char s[MAX_STRING_SIZE] = "abcdefg gfedcba";
     assert(wordsFromSameLetters(s));
 }
 
 void test_wordsFromSameLetters_hasNotThisWords() {
-    char s[] = "zxczxc abcabc";
+    char s[MAX_STRING_SIZE] = "zxczxc abcabc";
     assert(!wordsFromSameLetters(s));
 }
 
 void test_wordsFromSameLetters_empty() {
-    char s[] = "";
+    char s[MAX_STRING_SIZE] = "";
     assert(!wordsFromSameLetters(s));
 }
 

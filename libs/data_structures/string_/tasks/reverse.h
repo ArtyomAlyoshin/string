@@ -16,9 +16,4 @@ void task7(char *s) {
 }
 
 
-void test_task7() {
-    char s[] = "hello word!";
-    task7(s);
-}
-
 #endif

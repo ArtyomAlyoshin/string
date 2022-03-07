@@ -55,7 +55,7 @@ char *findSpaceReverse(char *rbegin, const char *rend) {
 int strcmp(const char *lhs, const char *rhs) {
     while (*lhs && *lhs == *rhs)
         lhs++, rhs++;
-    return *lhs -  *rhs;
+    return *lhs - *rhs;
 }
 
 char *copy(const char *beginSource, const char *endSource, char *beginDestination) {
@@ -100,7 +100,7 @@ bool getWordReverse(char *rbegin, char *rend, WordDescriptor *word) {
     if (word->end == rend)
         return 0;
 
-    word->begin = findSpaceReverse(word->end, rend) + 1;
+    word->begin = findSpaceReverse(word->end - 1, rend) + 1;
     return 1;
 }
 
@@ -109,7 +109,7 @@ void getBagOfWords(BagOfWords *bag, char *s) {
     WordDescriptor word;
     while (getWord(s, &word)) {
         bag->words[bag->size] = word;
-        bag->size+=1;
+        bag->size += 1;
         s = word.end;
     }
 }
@@ -124,11 +124,11 @@ char *copyReverse(char *rbeginSource, const char *rendSource,
 }
 
 int areWordsEqual(WordDescriptor w1, WordDescriptor w2) {
-    char *begin1 = w1.begin;
-    char *begin2 = w2.begin;
-    while ((*begin1 == *begin2)&&begin1 != w1.end - 1  )
-        begin1++, begin2++;
-    return *begin1 - *begin2;
+    char *a = w1.begin;
+    char *b = w2.begin;
+    while ((*a == *b) && a != w1.end - 1)
+        a++, b++;
+    return *a - *b;
 }
 
 char *getEndOfString(char *s) {
