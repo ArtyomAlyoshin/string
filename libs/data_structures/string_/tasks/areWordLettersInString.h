@@ -30,7 +30,7 @@ void test_lettersInWordInString_hasEqualLetters() {
     assert(lettersInWordInString(s, word));
 }
 
-void test_lettersInWordInString_hasNotFullEqualLetters() {
+void test_lettersInWordInString_hasNoEqualLetters() {
     char s[MAX_STRING_SIZE] = "abcde";
     char word[MAX_STRING_SIZE] = "def";
 
@@ -53,7 +53,7 @@ void test_lettersInWordInString_wordIsEmpty() {
 
 void test_lettersInWordInString() {
     test_lettersInWordInString_hasEqualLetters();
-    test_lettersInWordInString_hasNotFullEqualLetters();
+    test_lettersInWordInString_hasNoEqualLetters();
     test_lettersInWordInString_wordIsEmpty();
     test_lettersInWordInString_spaces();
 }

@@ -20,6 +20,7 @@
 
 
 int main() {
+    test_replace();
     test_lettersInWordInString();
     test_addLastWords();
     test_getLastWordInFirstStringAndTheSecondString();
